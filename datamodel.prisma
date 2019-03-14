@@ -1,0 +1,20 @@
+type tag {
+  id: ID! @id
+  type: String!
+  name: String! @unique
+  values: [String]
+}
+
+type Annotation @embedded {
+  name:String!
+  value:String!
+  count: Int!
+}
+
+type data {
+  id: ID! @id
+  hash: String! @unique
+  text: String
+  annotations:[Annotation]
+}
+
